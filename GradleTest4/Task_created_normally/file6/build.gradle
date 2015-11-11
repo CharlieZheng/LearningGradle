@@ -1,0 +1,11 @@
+// 构建配置脚本说明：延迟依赖
+// 执行命令：gradle -q taskX
+// 注意事项：1.当引用的任务尚未定义的时候不可使用短标记法（见“短标记法”）来运行任务
+// 2.dependsOn:后面指定的依赖任务可以用单引号引用也可以用双引号引用
+// 3.dependsOn:后面的中括号可加可不加
+task taskX(dependsOn: ["taskY"]) << {
+    println "taskX"
+}
+task taskY << {
+    println 'taskY'
+}

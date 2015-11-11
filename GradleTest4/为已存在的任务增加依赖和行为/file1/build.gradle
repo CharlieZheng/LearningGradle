@@ -1,0 +1,8 @@
+// 构建配置脚本说明：为已存在任务增加依赖
+// 执行命令：gradle -q task3
+4.times { counter_ ->
+    task "task$counter_" << {
+        println "I'm task number $counter_"
+    }
+}
+task3.dependsOn task0, task1, task2

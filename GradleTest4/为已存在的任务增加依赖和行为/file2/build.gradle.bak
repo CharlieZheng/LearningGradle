@@ -1,0 +1,17 @@
+// 构建配置脚本说明：为已存在任务增加行为
+// 执行命令：gradle -q hello
+task hello << {
+    println 'Hello Earth'
+}
+
+hello.doFirst {
+    println 'Hello Venus'
+}
+
+hello.doLast {
+    println 'Hello Mars'
+}
+
+hello << {
+    println 'Hello Jupiter'
+}

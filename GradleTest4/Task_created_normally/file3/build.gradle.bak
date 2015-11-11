@@ -1,0 +1,7 @@
+// 单引号和双引号可以混用
+task upper << {
+    String str1 = "mY_nAmE1"
+    String str2 = 'mY_nAmE2'
+    println 'Original: ' + str1 + " " + str2
+    println "Upper case: " + str1.toUpperCase() + ' ' + str2.toUpperCase()
+}

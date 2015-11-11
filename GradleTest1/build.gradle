@@ -1,0 +1,22 @@
+apply plugin:'java'
+
+jar {
+	from{
+		configurations.compile.collect { 
+			it.isDirectory()?it:zipTree(it)
+		}
+	}
+    manifest {
+    
+        attributes 'Main-Class': 'com.cndatacom.main.Main'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+ 
+dependencies {
+    compile 'log4j:log4j:1.2.17'
+    testCompile 'junit:junit:4.11'
+}

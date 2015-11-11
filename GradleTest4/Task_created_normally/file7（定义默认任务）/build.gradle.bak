@@ -1,0 +1,20 @@
+// 构建配置脚本说明：定义默认任务
+// 执行命令：gradle -q
+// 说明：无
+// 注意事项：无
+defaultTasks 'clean', "run"
+task clean << {
+    println 'Default Cleaning!'
+}
+task run << {
+    str = 'dd'
+    if(!str){
+        print 'str == null'
+    } else {
+        print 'str != null'
+    }
+    println 'Default Running!'
+}
+task other << {
+    println "I'm not a default task!"
+}

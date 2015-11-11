@@ -1,0 +1,7 @@
+// Ö´ĞĞÃüÁî£ºgradle -q task3
+4.times { counter_ ->
+    task "task$counter_" << {
+        println "I'm task number $counter_"
+    }
+}
+task3.dependsOn task0, task1, task2

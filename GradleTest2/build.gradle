@@ -1,0 +1,28 @@
+apply plugin:'java'
+apply plugin:'application'
+
+
+repositories {
+    mavenCentral()
+}
+ 
+dependencies {
+    compile 'log4j:log4j:1.2.17'
+    testCompile 'junit:junit:4.11'
+}
+
+mainClassName='com.cndatacom.main.Main'
+
+task copyLicense {
+    outputs.file new File("$buildDir/a/LICENSE")
+    doLast {
+        copy {
+            from "LICENSE"
+            into "$buildDir/a"
+        }
+    }
+}
+
+applicationDistribution.from(copyLicense) {
+    into ""
+}

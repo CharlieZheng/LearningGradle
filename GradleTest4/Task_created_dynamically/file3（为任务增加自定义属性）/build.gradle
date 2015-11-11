@@ -1,0 +1,12 @@
+// 构建配置脚本说明：为任务增加自定义属性
+// 执行命令：gradle -q printTaskProperties
+// 说明：你可以为一个任务添加额外的属性。例如，新增一个叫做myProperty的属性；用ext.myProperty的方式给他一个初始值；这样便增加了一个自定义属性。
+// 注意事项：1.ext.myProperty中的ext是固定不变的，写死的。
+task myTask {
+    ext.myProperty1 = "myValue1"
+    ext.myProperty2 = "myValue2"
+}
+task printTaskProperties << {
+    println myTask.myProperty1
+    println myTask.myProperty2
+}

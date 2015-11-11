@@ -1,0 +1,8 @@
+// 在gradle任务中采用groovy
+// <<左右可以没有空格
+// 使用$符号时，引号只能是双引号
+task count<<{
+    4.times {
+        print "$it"
+    }
+}

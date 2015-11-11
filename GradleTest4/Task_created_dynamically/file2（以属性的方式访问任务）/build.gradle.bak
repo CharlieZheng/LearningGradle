@@ -1,0 +1,10 @@
+// 构建配置脚本说明：以属性的方式访问任务
+// 执行命令：gradle -q hello
+// 注意事项：使用$符号引用任务对象（hello）时，字符串应使用双引号
+// 说明：无
+task hello << {
+    println 'Hello World!'
+}
+hello << {
+    println "Greetings from the $hello.name task."
+}

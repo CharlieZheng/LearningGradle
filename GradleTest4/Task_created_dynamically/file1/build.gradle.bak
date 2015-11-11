@@ -1,0 +1,8 @@
+// 执行命令：gradle -q task0或1, 2, 3
+// 注意事项：task后面声明的带变量的任务名称只能用双引号
+4.times {
+    counter ->
+    task "task$counter" << {
+        println "I'm task number $counter"
+    }
+}

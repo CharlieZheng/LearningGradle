@@ -1,0 +1,9 @@
+// 构建配置脚本说明：在两个任务之间指明依赖关系
+// 执行命令：gradle -q intro
+task hello << {
+    println 'Hello World!'
+}
+
+task intro(dependsOn: hello) << {
+    println "I'm Gradle"
+}
