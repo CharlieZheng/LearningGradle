@@ -1,0 +1,15 @@
+def myClosure = {println myVar} //I'm referencing myVar from MyClass class
+MyClass m = new MyClass()
+myClosure.setDelegate(m)
+myClosure()
+
+class MyClass {
+    def myVar = 'Hello from MyClass!'
+    def myVar1 = 'Hello1 from MyClass!'
+    def myVar2 = 'Hello2 from MyClass!'
+}
+
+
+task printDir{
+    println rootDir
+}

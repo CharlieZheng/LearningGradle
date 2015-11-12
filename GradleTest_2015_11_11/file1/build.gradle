@@ -1,0 +1,14 @@
+task hello
+println hello.name
+println project.hello.name
+println tasks.hello.name
+println tasks['hello'].name
+
+project(':projectA') {
+    task hello
+}
+
+println tasks.getByPath('hello').path
+println tasks.getByPath(':hello').path
+println tasks.getByPath('projectA:hello').path
+println tasks.getByPath(':projectA:hello').path
